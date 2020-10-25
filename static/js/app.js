@@ -45,28 +45,28 @@ function dataPlots(id) {
 // Create the data variable
         let barData = [trace];
 // Create layout variable to set plots layout
-    let layout = {
-    title: "Top 10 OTU vs Sample Values",
-    yaxis: {
-        tickmode: "linear", 
-        title: "Sample Values"
-    },
-    xaxis: { title: "OTU ids"},
+        let layout = {
+        title: "Top 10 OTU vs Sample Values",
+        yaxis: {
+            tickmode: "linear", 
+            title: "Sample Values"
+        },
+        xaxis: { title: "OTU ids"},
+        };
+// Create the bar plot
+    Plotly.newPlot("bar", barData, layout);
+    //console.log???
+// Create the bubble plot
+    let newtrace = {
+        y: sampleValues,
+        x: topOTU,
+        mode: "markers",
+        marker: {
+            size: sampleValues,
+            color: topOTU,
+        },
+        text: labels
     };
- // Create the bar plot
- Plotly.newPlot("bar", barData, layout);
- //console.log???
- // Create the bubble plot
- let newtrace = {
- y: sampleValues,
- x: topOTU,
- mode: "markers",
- marker: {
-     size: sampleValues,
-     color: topOTU,
- },
- text: labels
- };
  // Create the layout for the bubble plot
  let layoutB = {
  title: "Marker Size",
