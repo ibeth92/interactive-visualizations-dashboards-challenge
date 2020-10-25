@@ -41,7 +41,7 @@ function dataPlots(id) {
     type: "bar",
     orientation: "h",
     mode: 'markers',
-    };
+        };
 // Create the data variable
         let barData = [trace];
 // Create layout variable to set plots layout
@@ -68,20 +68,20 @@ function dataPlots(id) {
         text: labels
     };
  // Create the layout for the bubble plot
- let layoutB = {
- title: "Marker Size",
- xaxis: { title: "Top 10 OTU" },
- yaxis: { title: "Top 10 Values"},
- height: 600,
- width: 1000,
- };
+   let layoutB = {
+        title: "Marker Size",
+        xaxis: { title: "Top 10 OTU" },
+        yaxis: { title: "Top 10 Values"},
+        height: 600,
+        width: 1000,
+    };
  // Create the data variable 
- let dataB = [newtrace];
+    let dataB = [newtrace];
  
  // Create the bubble plot
- Plotly.newPlot("bubble", dataB, layoutB);
+    Plotly.newPlot("bubble", dataB, layoutB);
+    };
  });
- }
  // Create function for the change event
  function optionChanged(id) {
  dataPlots(id);
