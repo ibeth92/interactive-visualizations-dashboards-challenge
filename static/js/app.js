@@ -104,3 +104,18 @@ function init() {
             });
             data.samples.forEach(sampleValues => 
             console.log(sampleValues));
+            // Demographic info
+            let demoData = data.metadata.filter(sample => sample.id)[0];
+            console.log(demoData);
+            Object.entries(demoData).forEach(
+            ([key, value]) => d3.select("#sample-metadata")
+            .append("p")
+            .text(`${key}: ${value}`)
+            );
+            // Call functions to display the data plots to the page
+            dataPlots(data.names[0]);
+            dataInfo(data.names[0]);
+            });
+            }
+            
+            init();
