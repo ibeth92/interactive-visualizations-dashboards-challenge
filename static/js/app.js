@@ -27,10 +27,10 @@ function dataPlots(id) {
         let labels = cleanData[0].otu_labels.slice(0,10).reverse();
         let labelArray = []
 // For loop
-for(let i=0; i<10; i++) {
-    labelArray.push("OTU" + cleanData[0].otu_id[i])
+        for(let i=0; i<10; i++) {
+            labelArray.push("OTU" + cleanData[0].otu_id[i])
 // Create trace variable for plotting
-let trace = {
+        let trace = {
     x: idsampleValues,
     y: labelArray,
     text: labels,
@@ -42,9 +42,9 @@ let trace = {
     orientation: "h",
     mode: 'markers',
     };
-    // Create the data variable
-    let barData = [trace];
-    // Create layout variable to set plots layout
+// Create the data variable
+        let barData = [trace];
+// Create layout variable to set plots layout
     let layout = {
     title: "Top 10 OTU vs Sample Values",
     yaxis: {
