@@ -92,3 +92,7 @@ function init() {
     // Select dropdown menu 
     let dropdownMenu = d3.select("#selDataset");
     // Read in sample data 
+    d3.json("Data/samples.json").then((data) => {
+        console.log(data);
+        // Populate name id data to the dropdwown menu
+        let testid = data.names;
