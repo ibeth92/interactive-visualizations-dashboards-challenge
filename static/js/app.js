@@ -16,17 +16,17 @@ function dataPlots(id) {
             .text(`${key}: ${value}`)
         );
 // Bring in sample data by id 
-let cleanData = data.samples.filter(sample => sample.id === id);
+        let cleanData = data.samples.filter(sample => sample.id === id);
 //console.log(cleanData);
 // Retrieve top 10 OTU ids for plot OTU and reverse them
-let idsampleValues = cleanData[0].sample_values.slice(0,10).reverse();
+        let idsampleValues = cleanData[0].sample_values.slice(0,10).reverse();
 //console.log(idsampleValues);
-let topOTU = cleanData[0].otu_id.slice(0, 10).reverse();
+        let topOTU = cleanData[0].otu_id.slice(0, 10).reverse();
 // Transform OTUs for plotting
 //let otu_id = topOTU.map(d => "OTU " + d)
-let labels = cleanData[0].otu_labels.slice(0,10).reverse();
-let labelArray = []
-
+        let labels = cleanData[0].otu_labels.slice(0,10).reverse();
+        let labelArray = []
+// For loop
 for(let i=0; i<10; i++) {
     labelArray.push("OTU" + cleanData[0].otu_id[i])
 // Create trace variable for plotting
