@@ -83,20 +83,20 @@ function dataPlots(id) {
     };
  });
  // Create function for the change event
- function optionChanged(id) {
- dataPlots(id);
- dataInfo(id);
- }
+    function optionChanged(id) {
+        dataPlots(id);
+        dataInfo(id);
+ };
 // Read in samples.json and create function to render plots with data
-function init() {
-    // Select dropdown menu 
-    let dropdownMenu = d3.select("#selDataset");
-    // Read in sample data 
-    d3.json("Data/samples.json").then((data) => {
-        console.log(data);
-        // Populate name id data to the dropdwown menu
+    function init() {
+// Select dropdown menu 
+        let dropdownMenu = d3.select("#selDataset");
+// Read in sample data 
+        d3.json("Data/samples.json").then((data) => {
+            console.log(data);
+// Populate name id data to the dropdwown menu
         let testid = data.names;
-        // Append values 
+// Append values 
         data.names.forEach(name=> {
             dropdownMenu.append("option")
                 .text(name)
@@ -116,6 +116,5 @@ function init() {
             dataPlots(data.names[0]);
             dataInfo(data.names[0]);
             });
-            }
-            
-            init();
+};
+init()};
